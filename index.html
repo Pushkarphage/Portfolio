@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUSHKAR PHAGE | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+.about-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about-flex .block-box {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+
+.profile-photo {
+  align: center;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .about-flex {
+    flex-direction: column;
+  }
+}
+
+.block-box {
+  position: relative;
+  background: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Glow effect using pseudo-element */
+.block-box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode .block-box {
+  background: #1e1e1e;
+  color: #f4f4f4;
+}
+
+body.dark-mode .block-box::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+}
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: #ccc;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background: #121212;
+      color: #f4f4f4;
+    }
+
+    body.dark-mode header,
+    body.dark-mode footer {
+      background: #1e1e1e;
+      color: #f4f4f4;
+    }
+
+    body.dark-mode nav a {
+      color: #f4f4f4;
+    }
+
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode p,
+    body.dark-mode a {
+      color: #f4f4f4;
+    }
+
+    body.dark-mode a:hover {
+      color: #F59E0B;
+    }
+
+    body.dark-mode .block-box,
+    body.dark-mode .project-card {
+      background: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      color: #f4f4f4;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    /* Toggle button styling */
+    #modeToggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    #modeToggle:hover {
+      transform: rotate(20deg) scale(1.1);
+    }
+
+    #modeIcon {
+      display: inline-block;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #F59E0B;
+}
+
+.block-box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160%;
+  height: 160%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.3) 0%, transparent 70%);
+  z-index: -1;
+  transition: background 0.3s ease;
+  filter: blur(40px);
+}
+
+body.dark-mode .block-box::before {
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.15) 0%, transparent 70%);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+body.dark-mode ul li {
+  border-color: #444;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+}
+
+.contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.contact-flex .block-box {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .contact-flex {
+    flex-direction: column;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PUSHKAR PHAGE</h1>
+    <p>Web Developer   |   Designer   |   Creator</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+
+      <button id="modeToggle" aria-label="Toggle dark mode">
+        <span id="modeIcon">🌙</span>
+      </button>
+    </nav>
+  </header>
+<section id="about">
+  <div class="about-flex" data-aos="fade-up">
+
+    <!-- Profile Block -->
+    <div class="block-box fade-in profile-box">
+      <img src="profile.jpeg" alt="Pushkar Phage" class="profile-photo">
+      <h1>Pushkar Phage</h1>
+      <p>~Btech  in Information Technology Engineering</p>
+	<p>~Pillai College Of Engineering</p>
+    </div>
+
+    <!-- About Block -->
+    <div class="block-box fade-in">
+      <h1>About Me</h1>
+      <p>I’m Pushkar Phage, a passionate web developer with a love for clean design and interactive experiences.</p>
+    </div>
+
+  </div>
+</section>
+  <section id="projects">
+    <div class="block-box fade-in" data-aos="fade-up">
+	<div class="glow-wrapper">
+  <div class="block-box fade-in">
+      <h1>Projects</h1>
+      <div class="project-card">
+        <h2>Portfolio Website</h2>
+        <p>A responsive personal portfolio built with HTML, CSS, and JavaScript.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+</div>
+</div>
+    </div>
+  </section>
+
+<section id="skills">
+  <div class="block-box fade-in" data-aos="fade-up">
+    <h1>Skills</h1>
+    <ul>
+      <li>Responsive Web Design</li>
+      <li>UI/UX Animation (AOS, GSAP)</li>
+      <li>Dark Mode & Theme Switching</li>
+      <li>Creative Problem Solving</li>
+    </ul>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="block-box fade-in" data-aos="fade-up">
+    <h1>Technical Expertise</h1>
+    <ul>
+      <li>HTML5, CSS, JavaScript</li>
+      <li>C Programming</li>
+      <li>React & TailwindCSS</li>
+      <li>Animation Libraries: AOS, GSAP</li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="block-box fade-in" data-aos="fade-up">
+    <h1>Professional Experience</h1>
+    <div class="project-card">
+      <h2>Freelance Web Developer</h2>
+      <p>2025 – Present</p>
+      <p>Designed and developed interactive portfolio sites with glowing effects, dark mode toggles, and animated transitions.</p>
+    </div>
+    <div class="project-card">
+      <h2>UI/UX – Creative Studio</h2>
+      <p>2025 - 26 Onwards </p>
+      <p>Working on front-end prototypes using GSAP and TailwindCSS, focusing on ambient lighting and icon transitions.</p>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="contact-flex" data-aos="fade-up">
+    
+    <!-- Contact Form Block -->
+    <div class="block-box fade-in">
+      <h1>Send a Message</h1>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+	<input type="number" value="{+91}[0-9]" placeholder=" Your Contact Nmber" required/>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <!-- Contact Details Block -->
+    <div class="block-box fade-in">
+      <h1>Contact Details</h1>
+      <p><strong>Email:</strong> pushkarphage@gmail.com</p>
+      <p><strong>Phone:</strong> +91 9137185040</p>
+      <p><strong>Location:</strong> Navi Mumbai, India</p>
+      <p><strong>LinkedIn:</strong> <a href="#" target="_blank">linkedin.com/in/pushkar-phage-6a5ba0385</a></p>
+    </div>
+
+  </div>
+</section>
+  <footer>
+    <p>&copy; 2025 Pushkar Phage. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    const toggleButton = document.getElementById('modeToggle');
+    const modeIcon = document.getElementById('modeIcon');
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+
+      // Animate icon change
+      modeIcon.style.opacity = 0;
+      setTimeout(() => {
+        modeIcon.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        modeIcon.style.opacity = 1;
+      }, 200);
+
+      // Save preference
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        modeIcon.textContent = '☀️';
+      }
+    });
+  </script>
+
+  <!-- Contact Form Alert -->
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thanks for reaching out! I’ll get back to you soon.');
+    });
+  </script>
+</body>
+</html>
