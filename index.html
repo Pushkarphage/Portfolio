@@ -1,3 +1,4 @@
+<!--https://portfolio-rose-tau-u6t40k696z.vercel.app/*/-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,11 +17,22 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
 
+    /* Sticky Navbar */
     header {
       background: #333;
       color: #fff;
-      padding: 2rem;
+      padding: 1rem 0;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(51, 51, 51, 0.9);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     nav a {
@@ -74,8 +86,10 @@
   position: relative;
   background: #fff;
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;       /* auto left/right centers the block */
   border-radius: 10px;
+  width: 90%;              /* responsive width */
+  max-width: 1500px;       /* prevents it from stretching too wide on large screens */
   z-index: 1;
   overflow: hidden;
   transition: background 0.3s ease, color 0.3s ease;
@@ -291,25 +305,25 @@ body.dark-mode ul li {
 
     <!-- Profile Block -->
     <div class="block-box fade-in profile-box">
-      <img src="profile.jpeg" alt="Pushkar Phage" class="profile-photo">
-      <h1>Pushkar Phage</h1>
+<center>
+      <img src="profile.jpeg" alt="Pushkar Phage" class="profile-photo" height="250" width="200">
+</center>
+      <h1 align="center">Pushkar Phage</h1>
       <p>~Btech  in Information Technology Engineering</p>
 	<p>~Pillai College Of Engineering</p>
     </div>
 
     <!-- About Block -->
     <div class="block-box fade-in">
-      <h1>About Me</h1>
+      <h1 align="center">About Me</h1>
       <p>I’m Pushkar Phage, a passionate web developer with a love for clean design and interactive experiences.</p>
     </div>
 
   </div>
 </section>
   <section id="projects">
-    <div class="block-box fade-in" data-aos="fade-up">
-	<div class="glow-wrapper">
   <div class="block-box fade-in">
-      <h1>Projects</h1>
+      <h1 align="center">Projects</h1>
       <div class="project-card">
         <h2>Portfolio Website</h2>
         <p>A responsive personal portfolio built with HTML, CSS, and JavaScript.</p>
@@ -322,7 +336,7 @@ body.dark-mode ul li {
 
 <section id="skills">
   <div class="block-box fade-in" data-aos="fade-up">
-    <h1>Skills</h1>
+    <h1 align="center">Skills</h1>
     <ul>
       <li>Responsive Web Design</li>
       <li>UI/UX Animation (AOS, GSAP)</li>
@@ -334,7 +348,7 @@ body.dark-mode ul li {
 
 <section id="expertise">
   <div class="block-box fade-in" data-aos="fade-up">
-    <h1>Technical Expertise</h1>
+    <h1 align="center">Technical Expertise</h1>
     <ul>
       <li>HTML5, CSS, JavaScript</li>
       <li>C Programming</li>
@@ -346,7 +360,7 @@ body.dark-mode ul li {
 
 <section id="experience">
   <div class="block-box fade-in" data-aos="fade-up">
-    <h1>Professional Experience</h1>
+    <h1 align="center">Professional Experience</h1>
     <div class="project-card">
       <h2>Freelance Web Developer</h2>
       <p>2025 – Present</p>
@@ -364,7 +378,7 @@ body.dark-mode ul li {
     
     <!-- Contact Form Block -->
     <div class="block-box fade-in">
-      <h1>Send a Message</h1>
+      <h1 align="center">Send a Message</h1>
       <form id="contact-form">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
@@ -376,7 +390,7 @@ body.dark-mode ul li {
 
     <!-- Contact Details Block -->
     <div class="block-box fade-in">
-      <h1>Contact Details</h1>
+      <h1 align="center">Contact Details</h1>
       <p><strong>Email:</strong> pushkarphage@gmail.com</p>
       <p><strong>Phone:</strong> +91 9137185040</p>
       <p><strong>Location:</strong> Navi Mumbai, India</p>
